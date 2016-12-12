@@ -1,10 +1,7 @@
 language: groovy
-
 jdk:
 - oraclejdk7
-
 sudo: false
-
 before_install:
 - export TZ=Europe/Stockholm
 - date
@@ -12,9 +9,9 @@ before_install:
 - curl -s http://get.sdkman.io | bash
 - echo "sdkman_auto_answer=true" > ~/.sdkman/etc/config
 - source ~/.sdkman/bin/sdkman-init.sh
-- GRAILS_VERSION=`grep '^app\.grails\.version=' ./application.properties | sed -e 's/^app\.grails\.version=//g'`
+- GRAILS_VERSION=`grep '^app\.grails\.version=' ./application.properties | sed -e
+  's/^app\.grails\.version=//g'`
 - sdk install grails $GRAILS_VERSION || true
-
 before_script:
 - GRAILS_VERSION_NUMBER=`echo $GRAILS_VERSION | sed -e 's/\.[0-9]*$//g' -e 's/\.//g' | tr -d "\r"`
 - echo "GRAILS_VERSION_NUMBER:$GRAILS_VERSION_NUMBER"
@@ -23,14 +20,13 @@ before_script:
 - echo "GRAILS_SETTINGS_FILE:$GRAILS_SETTINGS_FILE"
 - mkdir -p ~/.grails
 - wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/$GRAILS_SETTINGS_FILE
-
 script:
-- grails clean && grails refresh-dependencies --non-interactive && grails prod war --non-interactive
-
+- grails clean && grails refresh-dependencies --non-interactive && grails prod war
+  --non-interactive
 deploy:
   provider: releases
   api_key:
-    secure: jiz5zWH1PAsSc/Mx6WZP3CdBcKbDL8jxGCLLZaF6ZxnrAL7kIF6mzbEEcAsyxqCt/dO8tI0y0y3m+17VjctfPkNOkyI+tBtiZiQ5Xl9fBss5y2otHt2rt4qa252mjni6QdtozhL4LsF7hjcnTDkU/zigc5RN+muXM4SUNmNf6dRBW/IRRZhHTA9EW8OV/aNwTTWpbO16w9NppVWTtM8mt09Wd1/fJ98hkYYC3Xj7irZQ3TWmjbIjUE/3+/73L5XTV/kOjK2eQNsmH+vnmRL+ZfiJXazxcxO10Za3k4kG9mrUljZz+AKkJOx5LPL+wD5COqVGJWvMJlwJO4+5CQ4xXkuOvQVTG8mGgTIloOmhoKjztyNM/76S5x/A4+9egEHUfTnImzINUna9qKbZBwvDwtsSLvXzhEgEiFi8jSuN0/HYWDdjW8apRDJnbAmkMCH5cBlnWS+hVLx+eZVQP8OU8AELc3GdDUNLTCWJ0qwvx9uVzmJE7DbOCUBv5cBdTiFu9sXIpExfQJmWqC3c/+zgWyAbYFXYrB3mxjthLYNxnj43XKQKncW7YmudGwtFczsq8IDcw+zekWDmPSE9wQZfVZQHcvAL0IPVuOQBnjECx8m3igzoSK+JW3gU2CClSVo9cRCqpUYsp5IaXN92j1bF5c6uxJXO5JVSV5ZdftSq/Is=
+    secure: leiaGfMPDmjlLTdriv3TGCZofv6ehMPbj0TBL5eqlp66rhmZHSBKsw5wOrFIC1hReKo9De45v9EaQDNqOphi35cyFbLD86geynmret4gxmkM2OAMdBnT9N2i/VcX46Ve+SQ4CHbdhBHwiFYd/pfZHwZPn9mguxhHHiMS5dA19P++LsuZ12Qq5OnXCGAY7g9tqnzM1KP3YK0dYVdUrzk3rGBAxTnmxho7WnpsLg/4ZgaW7I2uevkbCk+MxSA8n4eetAUybutp8tMQWx1tL78m1N8QkU5xzO8LOgVAeN2/7CmxxBreq6Laq5PCEXEHpIyO+obmOomDEK5D7sIchgmMD5Fhq5+CiJhb3DZ5xF0BjV2j5Wy3SYSviyiGVN35cgImA/AUAG4MU4O9JEfs6cB6nE0ROxOFjOF4zqRIL+EFxKEb5vfCMhv0H8mJBlZUbAo2N5U37DpyS13uruwTgh0ib9GUeNzL+Lwg8IQoTJ5HE2MTinInWoXRk4d/gkETRPGo0as7DMDJv9/Wa+n1bP9k+AL3Es7lzlnTWj0J8wOKpiWK/AxvVmIiY3sQ8OiAr8iRYM+L1XdovRvoGMSY+e3v8ODnAvDC/sAlo/yHXApRvEaltGVkc1AXQx8Etac/CZLJBlFKjzql3Gbw44fV96ihN43+Pd7jiFFAlRtPYcEGHeQ=
   file_glob: true
   file: "target/generic-collectory-*.war"
   skip_cleanup: true
