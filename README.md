@@ -1,1 +1,1 @@
-###generic-collectory [![Build Status](https://travis-ci.org/AtlasOfLivingAustralia/generic-collectory.svg?branch=master)](https://travis-ci.org/AtlasOfLivingAustralia/generic-collectory)
+###generic-collectory [![Build Status](https://travis-ci.org/shahmanash/generic-collectory-sweden.svg?branch=master)](https://travis-ci.org/shahmanash/generic-collectory-sweden)
