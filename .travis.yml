@@ -32,6 +32,6 @@ deploy:
   skip_cleanup: true
   overwrite: true
   on:
-    repo: shahmanash/generic-collectory-sweden
+    repo: bioatlas/generic-collectory-sweden
     all-branches: true
     tags: true
