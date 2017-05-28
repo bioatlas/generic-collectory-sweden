@@ -37,11 +37,6 @@
         }
    </style>
 
-   <g:if test="${grailsApplication.config.google.apikey}">
-       <script async defer src="https://maps.googleapis.com/maps/api/js?key=${grailsApplication.config.google.apikey}" type="text/javascript"></script>
-       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-   </g:if>
-
    <r:script disposition='head'>
         // initialise plugins
         jQuery(function(){
@@ -128,16 +123,6 @@
     <div class="container" id="main-content">
         <g:layoutBody />
     </div><!--/.container-->
-
-    <div id="footer">
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <a href="http://creativecommons.org/licenses/by/3.0/au/" title="External link to Creative Commons"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" width="88" height="31" alt=""></a>
-                This site is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/au/" title="External link to Creative Commons" class="external">Creative Commons Attribution 3.0 Australia License</a>.
-            Provider content may be covered by other <a href="#terms-of-use" title="Terms of Use">Terms of Use</a>.
-            </div>
-        </div>
-    </div><!--/#footer -->
 
 <!-- JS resources-->
 <r:layoutResources/>
