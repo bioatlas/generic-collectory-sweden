@@ -95,10 +95,10 @@
                 </g:else>
 
                 <g:if test="${hasRecords == 'true'}">
-                    <div id='usage-stats'>
-                        <h2><g:message code="public.sdp.usagestats.label" /></h2>
 
-                        <div id='usage'>
+                    <div id='usage-stats'>
+                        <h4><a href="#usage" data-toggle="collapse"><g:message code="public.sdp.usagestats.label" /></a></h4>
+                        <div id='usage' class="collapse">
                             <p><g:message code="public.usage.des" />...</p>
                         </div>
                     </div>

@@ -136,19 +136,6 @@
                 <cl:dataCurrency date="${instance.dataCurrency}"/></p>
         </g:if>
 
-        <g:if test="${!grailsApplication.config.disableLoggerLinks.toBoolean() && (instance.resourceType == 'website' || instance.resourceType == 'records')}">
-            <div id='usage-stats'>
-                <h2><g:message code="public.sdr.usagestats.labe" /></h2>
-
-                <div id='usage'>
-                    <p><g:message code="public.usage.des" />...</p>
-                </div>
-                <g:if test="${instance.resourceType == 'website'}">
-                    <div id="usage-visualization" style="width: 600px; height: 200px;"></div>
-                </g:if>
-            </div>
-        </g:if>
-
         <g:if test="${instance.resourceType == 'records'}">
             <h2><g:message code="public.sdr.content.label09" /></h2>
 
@@ -173,7 +160,21 @@
                 <div id="charts"></div>
             </div>
         </g:if>
+
+        <g:if test="${!grailsApplication.config.disableLoggerLinks.toBoolean() && (instance.resourceType == 'website' || instance.resourceType == 'records')}">
+            <div id='usage-stats'>
+                <h4><a href="#usage" data-toggle="collapse"><g:message code="public.sdr.usagestats.labe" /></a></h4>
+                <div id='usage' class="collapse">
+                    <p><g:message code="public.usage.des" />...</p>
+                </div>
+                <g:if test="${instance.resourceType == 'website'}">
+                    <div id="usage-visualization" style="width: 600px; height: 200px;"></div>
+                </g:if>
+            </div>
+        </g:if>
+
         <cl:lastUpdated date="${instance.lastUpdated}"/>
+
     </div><!--close column-one-->
         <div class="span4">
 

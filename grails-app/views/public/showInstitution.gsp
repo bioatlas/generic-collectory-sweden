@@ -91,14 +91,6 @@
                     </g:each>
                 </ol>
 
-                <div id='usage-stats'>
-                    <h2><g:message code="public.usagestats.label" /></h2>
-
-                    <div id='usage'>
-                        <p><g:message code="public.usage.des" />...</p>
-                    </div>
-                </div>
-
                 <h2><g:message code="public.si.content.label04" /></h2>
 
                 <div>
@@ -111,6 +103,13 @@
 
                 <div id="recordsBreakdown" class="section vertical-charts">
                     <div id="charts"></div>
+                </div>
+
+                <div id='usage-stats'>
+                    <h4><a href="#usage" data-toggle="collapse"><g:message code="public.usagestats.label" /></a></h4>
+                    <div id='usage' class="collapse">
+                        <p><g:message code="public.usage.des" />...</p>
+                    </div>
                 </div>
 
                 <cl:lastUpdated date="${instance.lastUpdated}"/>
