@@ -21,7 +21,7 @@
           </g:if>
           <div class="hrgroup">
             <h1>${grailsApplication.config.regionName}<g:message code="public.map3.header.title" /></h1>
-            <p><g:message code="public.map3.header.des01" /> ${grailsApplication.config.projectNameShort} <g:message code="public.map3.header.des02" args="[grailsApplication.config.regionName]"/>.</p>
+            <p><g:message code="public.map3.header.des01" />. <g:message code="public.map3.header.des02" args="[grailsApplication.config.regionName]"/>.</p>
           </div><!--close hrgroup-->
         </div><!--close section-->
       </div><!--close header-->

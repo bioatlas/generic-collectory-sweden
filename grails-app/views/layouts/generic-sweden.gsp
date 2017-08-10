@@ -99,13 +99,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="brand" href="#">${orgNameLong}</a>
+                <a class="brand" href="/">${orgNameLong}</a>
                 <div class="nav-collapse collapse">
                     <p class="navbar-text pull-right">
                         %{--Logged in as <a href="#" class="navbar-link">Fred Bare</a>--}%
                     </p>
                     <ul class="nav">                        
-                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/about/">About</a></li>
                         <li><a href="/collectory/">Collections</a></li>
                         <li><a href="/collectory/datasets/">Datasets</a></li>
